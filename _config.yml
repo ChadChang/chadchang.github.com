@@ -102,5 +102,5 @@ markdown:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
       type: git
-      repository: https://github.com/chadchang/chadchang.github.io
+      repository: https://github.com/chadchang/chadchang.github.com.git
       branch: master
