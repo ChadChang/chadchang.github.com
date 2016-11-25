@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Heroku : Sorry , I cannot find /"
+date: 2012-02-24 17:12
+comments: true
+tags: 
+- Heroku
+---
+<font color='red'>Sorry, I cannot find /</font>  
+
+因為一堆奇怪問題把 heroku 重裝之後，deploy 上去一直出現這問題，搞了半天才發現要把 .gitignore 的 ****public**** 移除，否則heroku 沒辦法讀取到，一個下午又這樣沒了…QQ

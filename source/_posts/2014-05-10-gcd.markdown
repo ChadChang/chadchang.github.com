@@ -1,0 +1,396 @@
+---
+layout: post
+title: "GCD 筆記"
+date: 2014-05-10 12:08
+comments: true
+tags:
+- iOS
+- GCD
+---
+參考 [Grand Central Dispatch In-Depth](http://www.raywenderlich.com/60749/grand-central-dispatch-in-depth-part-1) 的筆記。
+
+* Critical Section
+* Race Condition
+* Deadlock
+* Context Switch
+
+<!-- more -->
+### 背景讀取 dispatch_async
+
+``` objc PhotoDetailViewController.m
+
+- (void)viewDidLoad
+{   
+    [super viewDidLoad];
+    NSAssert(_image, @"Image not set; required to use view controller");
+    self.photoImageView.image = _image;
+ 
+    //Resize if neccessary to ensure it's not pixelated
+    if (_image.size.height <= self.photoImageView.bounds.size.height &&
+        _image.size.width <= self.photoImageView.bounds.size.width) {
+        [self.photoImageView setContentMode:UIViewContentModeCenter];
+    }
+ 
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+        UIImage *overlayImage = [self faceOverlayImageFromImage:_image];
+        dispatch_async(dispatch_get_main_queue(), ^{ // 2
+            [self fadeInNewImage:overlayImage]; // 3
+        });
+    });
+}
+```
+### 幾秒後提示 dispatch_after
+
+![GCD promote](/images/gcdpromotes.png)
+
+``` objc
+- (void)showOrHideNavPrompt PhotoCollectionViewController.m
+{
+    NSUInteger count = [[PhotoManager sharedManager] photos].count;
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)); // 1 
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){ // 2 
+        if (!count) {
+            [self.navigationItem setPrompt:@"Add photos with faces to Googlyify them!"];
+        } else {
+            [self.navigationItem setPrompt:nil];
+        }
+    });
+}
+```
+
+**dispatch_after 最好使用在 main queue**
+
+* Custom Serial Queue: Use caution when using dispatch_after on a custom serial queue. You’re better off sticking to the main queue.
+* Main Queue (Serial): This is a good choice for dispatch_after; Xcode has a nice autocomplete template for this.
+* Concurrent Queue: Use caution when using dispatch_after on custom concurrent queues; it’s rare that you’ll do this. Stick to the main queue for these operations.
+
+### Singleton
+
+``` objc PhotoManager.m
++ (instancetype)sharedManager
+{
+    static PhotoManager *sharedPhotoManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedPhotoManager = [[PhotoManager alloc] init];
+        sharedPhotoManager->_photosArray = [NSMutableArray array];
+    });
+    return sharedPhotoManager;
+}
+
+```
+
+
+### 讀寫問題 dispatch_barrier
+問題
+
+```objc PhotoManager.m
+
+- (void)addPhoto:(Photo *)photo
+{
+    if (photo) {
+        [_photosArray addObject:photo];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self postContentAddedNotification];
+        });
+    }
+}
+
+- (NSArray *)photos
+{
+  return [NSArray arrayWithArray:_photosArray];
+}
+```
+
+**dispatch_barrier 最好使用在 Custom Concurrent Queue**
+
+
+* Custom Serial Queue: A bad choice here; barriers won’t do anything helpful since a serial queue executes one operation at a time anyway.
+* Global Concurrent Queue: Use caution here; this probably isn’t the best idea since other systems might be using the queues and you don’t want to monopolize them for your own purposes.
+* Custom Concurrent Queue: This is a great choice for atomic or critical areas of code. Anything you’re setting or instantiating that needs to be thread safe is a great candidate for a barrier.
+
+修正
+
+```objc PhotoManager.m
+
+@interface PhotoManager ()
+@property (nonatomic,strong,readonly) NSMutableArray *photosArray;
+@property (nonatomic, strong) dispatch_queue_t concurrentPhotoQueue; ///< Add this
+@end
+
+
+// ADD THIS:
+sharedPhotoManager->_concurrentPhotoQueue = dispatch_queue_create("com.selander.GooglyPuff.photoQueue",DISPATCH_QUEUE_CONCURRENT); 
+                                                    
+- (void)addPhoto:(Photo *)photo
+{
+    if (photo) { // 1
+        dispatch_barrier_async(self.concurrentPhotoQueue, ^{ // 2 
+            [_photosArray addObject:photo]; // 3
+            dispatch_async(dispatch_get_main_queue(), ^{ // 4
+                [self postContentAddedNotification]; 
+            });
+        });
+    }
+}
+
+- (NSArray *)photos
+{
+    __block NSArray *array; // 1
+    dispatch_sync(self.concurrentPhotoQueue, ^{ // 2
+        array = [NSArray arrayWithArray:_photosArray]; // 3
+    });
+    return array;
+}
+```
+
+### dispatch_sync
+
+在讀取時，reader function 沒return時是無效的，所以採用`dispatch_sync`
+
+讓 read 使用 sync 且與 write 在同一個 concurrent queeue 是確保 read ＆ wirte 有順序，且避免多 thread 讀寫。
+
+**dispatch_sync 最好使用在 Custom Concurrent Queue**
+
+* Custom Serial Queue: Be VERY careful in this situation; if you’re running in a queue and call dispatch_sync targeting the same queue, you will definitely create a deadlock.
+* Main Queue (Serial): Be VERY careful for the same reasons as above; this situation also has potential for a deadlock condition.
+* Concurrent Queue: This is a good candidate to sync work through dispatch barriers or when waiting for a task to complete so you can perform further processing.
+
+
+### 全部圖片下載完後提示 dispatch_group
+
+``` objc PhotoManager.m
+- (void)downloadPhotosWithCompletionBlock:(BatchPhotoDownloadingCompletionBlock)completionBlock
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
+ 
+        __block NSError *error;
+        dispatch_group_t downloadGroup = dispatch_group_create(); // 2
+ 
+        for (NSInteger i = 0; i < 3; i++) {
+            NSURL *url;
+            switch (i) {
+                case 0:
+                    url = [NSURL URLWithString:kOverlyAttachedGirlfriendURLString];
+                    break;
+                case 1:
+                    url = [NSURL URLWithString:kSuccessKidURLString];
+                    break;
+                case 2:
+                    url = [NSURL URLWithString:kLotsOfFacesURLString];
+                    break;
+                default:
+                    break;
+            }
+ 
+            dispatch_group_enter(downloadGroup); // 3
+            Photo *photo = [[Photo alloc] initwithURL:url
+                                  withCompletionBlock:^(UIImage *image, NSError *_error) {
+                                      if (_error) {
+                                          error = _error;
+                                      }
+                                      dispatch_group_leave(downloadGroup); // 4
+                                  }];
+ 
+            [[PhotoManager sharedManager] addPhoto:photo];
+        }
+        dispatch_group_wait(downloadGroup, DISPATCH_TIME_FOREVER); // 5
+        dispatch_async(dispatch_get_main_queue(), ^{ // 6
+            if (completionBlock) { // 7
+                completionBlock(error);
+            }
+        });
+    });
+}
+```
+
+**dispatch_group 皆可使用在各種 Queue**
+
+* Custom Serial Queue: This is a good candidate for notifications when a group of tasks completes.
+* Main Queue (Serial): This is a good candidate as well in this scenario. You should be wary of using this on the main queue if you are waiting synchronously for the completion of all work since you don’t want to hold up the main thread. However, the asynchronous model is an attractive way to update the UI once several long-running tasks finish such as network calls.
+* Concurrent Queue: This as well is a good candidate for dispatch groups and completion notifications.
+
+**比較簡潔方式**
+
+```objc     
+
+- (void)downloadPhotosWithCompletionBlock:(BatchPhotoDownloadingCompletionBlock)completionBlock
+{
+    // 1
+    __block NSError *error;
+    dispatch_group_t downloadGroup = dispatch_group_create(); 
+ 
+    for (NSInteger i = 0; i < 3; i++) {
+        NSURL *url;
+        switch (i) {
+            case 0:
+                url = [NSURL URLWithString:kOverlyAttachedGirlfriendURLString];
+                break;
+            case 1:
+                url = [NSURL URLWithString:kSuccessKidURLString];
+                break;
+            case 2:
+                url = [NSURL URLWithString:kLotsOfFacesURLString];
+                break;
+            default:
+                break;
+        }
+ 
+        dispatch_group_enter(downloadGroup); // 2
+        Photo *photo = [[Photo alloc] initwithURL:url
+                              withCompletionBlock:^(UIImage *image, NSError *_error) {
+                                  if (_error) {
+                                      error = _error;
+                                  }
+                                  dispatch_group_leave(downloadGroup); // 3
+                              }];
+ 
+        [[PhotoManager sharedManager] addPhoto:photo];
+    }
+ 
+    dispatch_group_notify(downloadGroup, dispatch_get_main_queue(), ^{ // 4
+        if (completionBlock) {
+            completionBlock(error);
+        }
+    });
+}
+
+```
+### 同時進行 for loop  dispatch_apply
+
+```objc 
+- (void)downloadPhotosWithCompletionBlock:(BatchPhotoDownloadingCompletionBlock)completionBlock
+{
+    __block NSError *error;
+    dispatch_group_t downloadGroup = dispatch_group_create();
+ 
+    dispatch_apply(3, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(size_t i) {
+ 
+        NSURL *url;
+        switch (i) {
+            case 0:
+                url = [NSURL URLWithString:kOverlyAttachedGirlfriendURLString];
+                break;
+            case 1:
+                url = [NSURL URLWithString:kSuccessKidURLString];
+                break;
+            case 2:
+                url = [NSURL URLWithString:kLotsOfFacesURLString];
+                break;
+            default:
+                break;
+        }
+ 
+        dispatch_group_enter(downloadGroup);
+        Photo *photo = [[Photo alloc] initwithURL:url
+                              withCompletionBlock:^(UIImage *image, NSError *_error) {
+                                  if (_error) {
+                                      error = _error;
+                                  }
+                                  dispatch_group_leave(downloadGroup);
+                              }];
+ 
+        [[PhotoManager sharedManager] addPhoto:photo];
+    });
+ 
+    dispatch_group_notify(downloadGroup, dispatch_get_main_queue(), ^{
+        if (completionBlock) {
+            completionBlock(error);
+        }
+    });
+}
+
+```
+
+但寫 app 時間有限，除非在非常大的 set 中，否則不要太 crazy。
+
+### Semaphores
+
+問題：太浪費 cpu
+
+``` objc  GooglyPuffTests.m
+- (void)downloadImageURLWithString:(NSString *)URLString
+{
+    NSURL *url = [NSURL URLWithString:URLString];
+    __block BOOL isFinishedDownloading = NO;
+    __unused Photo *photo = [[Photo alloc]
+                             initwithURL:url
+                             withCompletionBlock:^(UIImage *image, NSError *error) {
+                                 if (error) {
+                                     XCTFail(@"%@ failed. %@", URLString, error);
+                                 }
+                                 isFinishedDownloading = YES;
+                             }];
+ 
+    while (!isFinishedDownloading) {}
+}
+
+```
+dispatch_semaphore_create 方式
+
+``` objc GooglyPuffTests.m
+- (void)downloadImageURLWithString:(NSString *)URLString
+{
+    // 1
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+ 
+    NSURL *url = [NSURL URLWithString:URLString];
+    __unused Photo *photo = [[Photo alloc]
+                             initwithURL:url
+                             withCompletionBlock:^(UIImage *image, NSError *error) {
+                                 if (error) {
+                                     XCTFail(@"%@ failed. %@", URLString, error);
+                                 }
+ 
+                                 // 2
+                                 dispatch_semaphore_signal(semaphore);
+                             }];
+ 
+    // 3
+    dispatch_time_t timeoutTime = dispatch_time(DISPATCH_TIME_NOW, kDefaultTimeoutLengthInNanoSeconds);
+    if (dispatch_semaphore_wait(semaphore, timeoutTime)) {
+        XCTFail(@"%@ timed out", URLString);
+    }
+}
+```
+### dispatch_source
+蠻複雜的....
+
+``` objc 
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+ 
+  // 1
+  #if DEBUG
+      // 2
+      dispatch_queue_t queue = dispatch_get_main_queue();
+ 
+      // 3
+      static dispatch_source_t source = nil;
+ 
+      // 4
+      __typeof(self) __weak weakSelf = self;
+ 
+      // 5
+      static dispatch_once_t onceToken;
+      dispatch_once(&onceToken, ^{
+          // 6
+          source = dispatch_source_create(DISPATCH_SOURCE_TYPE_SIGNAL, SIGSTOP, 0, queue);
+ 
+          // 7
+          if (source)
+          {
+              // 8
+              dispatch_source_set_event_handler(source, ^{
+                  // 9
+                  NSLog(@"Hi, I am: %@", weakSelf);
+              });
+              dispatch_resume(source); // 10
+          }
+      });
+  #endif
+ 
+  // The other stuff
+```
