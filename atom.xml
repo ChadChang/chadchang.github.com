@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chadchang.github.io/"/>
-  <updated>2018-05-31T01:12:13.128Z</updated>
+  <updated>2018-05-31T01:12:13.000Z</updated>
   <id>http://chadchang.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://chadchang.github.io/2018/05/25/apple-today/"/>
     <id>http://chadchang.github.io/2018/05/25/apple-today/</id>
     <published>2018-05-25T10:49:44.000Z</published>
-    <updated>2018-05-31T01:12:13.128Z</updated>
+    <updated>2018-05-31T01:12:13.000Z</updated>
     
     <content type="html"><![CDATA[<p>在 P 社滿五年了，在 2016/11/04 的 “同一天 App Store、Google Play 雙 Feature” 之後，17 年又經過 apple pay 台灣首發的 app 跟官網 promote 的 app 後，18 年又達到在 App Store 首頁被選為 Today 的成就，值得再紀念一下。</p><p><img src="/images/today_1.PNG" alt="Today"> <img src="/images/today_2.PNG" alt="Today"></p>]]></content>
     
@@ -48,7 +48,7 @@
     <link href="http://chadchang.github.io/2016/12/05/switch-to-atom/"/>
     <id>http://chadchang.github.io/2016/12/05/switch-to-atom/</id>
     <published>2016-12-05T10:42:47.000Z</published>
-    <updated>2018-05-30T03:02:22.182Z</updated>
+    <updated>2018-05-30T03:02:22.000Z</updated>
     
     <content type="html"><![CDATA[<p>在 Atom 剛發表時有安裝玩了一下，但當時不知道為什麼覺得不好用，直到又再翻到 <a href="http://www.slideshare.net/alemur1/atom-text-editor-resistance-is-futile" target="_blank" rel="noopener">Atom Text Editor: Resistance is Futile</a> 這份投影片，重新安裝 Atom 後光看畫面就很舒服，這篇也是在 Atom 底下寫出來的。建立好 markdown 的環境後，就可以與 sublime text 與 macdown 說再見了。<br><a id="more"></a></p><ol><li>環境修改： Settings -&gt; Core -&gt; Open Empty Editor on Start -&gt; 設定為關閉，否則每次開啟都會出現挺煩人的。</li><li>安裝 <code>markdown-writer</code> package<br>因此 package 將預設的 keymap 關閉，因此需在 Atom 上方的 File -&gt; Keymap 加上:</li></ol><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">".platform-darwin atom-text-editor[data-grammar~='gfm']"</span>:</span><br><span class="line">  <span class="string">"shift-cmd-K"</span>: <span class="string">"markdown-writer:insert-link"</span></span><br><span class="line">  <span class="string">"shift-cmd-I"</span>: <span class="string">"markdown-writer:insert-image"</span></span><br><span class="line">  <span class="string">"cmd-i"</span>:       <span class="string">"markdown-writer:toggle-italic-text"</span></span><br><span class="line">  <span class="string">"cmd-b"</span>:       <span class="string">"markdown-writer:toggle-bold-text"</span></span><br><span class="line">  <span class="string">"shift-cmd-'"</span>: <span class="string">"markdown-writer:toggle-code-text"</span></span><br><span class="line">  <span class="string">"cmd-k"</span>:       <span class="string">"markdown-writer:toggle-keystroke-text"</span></span><br><span class="line">  <span class="string">"cmd-h"</span>:       <span class="string">"markdown-writer:toggle-strikethrough-text"</span></span><br><span class="line">  <span class="string">"ctrl-alt-1"</span>:  <span class="string">"markdown-writer:toggle-h1"</span></span><br><span class="line">  <span class="string">"ctrl-alt-2"</span>:  <span class="string">"markdown-writer:toggle-h2"</span></span><br><span class="line">  <span class="string">"ctrl-alt-3"</span>:  <span class="string">"markdown-writer:toggle-h3"</span></span><br><span class="line">  <span class="string">"ctrl-alt-4"</span>:  <span class="string">"markdown-writer:toggle-h4"</span></span><br><span class="line">  <span class="string">"ctrl-alt-5"</span>:  <span class="string">"markdown-writer:toggle-h5"</span></span><br><span class="line">  <span class="string">"shift-cmd-O"</span>: <span class="string">"markdown-writer:toggle-ol"</span></span><br><span class="line">  <span class="string">"shift-cmd-U"</span>: <span class="string">"markdown-writer:toggle-ul"</span></span><br><span class="line">  <span class="string">"shift-cmd-&gt;"</span>: <span class="string">"markdown-writer:toggle-blockquote"</span></span><br><span class="line">  <span class="string">"cmd-'"</span>: <span class="string">"markdown-writer:toggle-codeblock-text"</span></span><br><span class="line">  <span class="string">"cmd-j cmd-p"</span>: <span class="string">"markdown-writer:jump-to-previous-heading"</span></span><br><span class="line">  <span class="string">"cmd-j cmd-n"</span>: <span class="string">"markdown-writer:jump-to-next-heading"</span></span><br><span class="line">  <span class="string">"cmd-j cmd-d"</span>: <span class="string">"markdown-writer:jump-to-reference-definition"</span></span><br><span class="line">  <span class="string">"cmd-j cmd-t"</span>: <span class="string">"markdown-writer:jump-to-next-table-cell"</span></span><br></pre></td></tr></table></figure><p>注意： 這邊我將 code block 快捷鍵改為 <em>cmd-‘</em> 因為比 inline code 常用</p><ol start="3"><li>因較常使用 objc 的 code，將 code block 預設改為 “<code>objc</code>“ 樣式，設定檔修改請參考 <a href="https://github.com/zhuochun/md-writer/wiki/Settings" target="_blank" rel="noopener">Settings · zhuochun/md-writer Wiki</a> 與 <a href="https://github.com/zhuochun/md-writer/wiki/Settings-for-individual-projects" target="_blank" rel="noopener">Settings for Individual Projects · zhuochun/md-writer Wiki</a></li></ol><p>（以上兩點大大解決每次在 Mackdown 貼 code 的不便）</p><ol start="4"><li><p>因偶爾會使用 swift code，為了讓 Atom 認識 swift style，需安裝 <code>language-swift</code> package</p></li><li><p><code>ctrl - shift - m</code> 可以預覽。</p></li></ol><p>另外，用 <code>hexo</code> 的話，有 <code>Atom-Hexo</code> package 可以使用， markdown-writer 內也可以針對 site 詳細設定，但因為我都是用 terminal，所以這部份就忽略了，有興趣的話可以自己調整。</p>]]></content>
     
@@ -136,7 +136,7 @@
     <link href="http://chadchang.github.io/2016/11/08/side-project/"/>
     <id>http://chadchang.github.io/2016/11/08/side-project/</id>
     <published>2016-11-08T13:24:39.000Z</published>
-    <updated>2018-06-01T06:22:47.366Z</updated>
+    <updated>2018-06-01T06:22:47.000Z</updated>
     
     <content type="html"><![CDATA[<p>在 App 寫了 六七年後，反而想再回去寫一點 Web 等不同於 App 的東西，畢竟過了這麼多年，現在整個 Web 世界又大大不同了。看到灣區日報的作者一直在持續推進他的東西，也學寫了 App 而且更新頻繁，一直在想自己有沒有可以效法他好好做一個自己用會感到興奮的東西。在思考之餘，剛好又在灣區日報看到了這篇 <a href="https://ponyfoo.com/articles/making-time-for-side-projects" target="_blank" rel="noopener">Making Time for Side Projects: A Daily Habit</a>，更確定是該來做些什麼了 :smile:</p><ol><li>It’s easier to get started</li><li>The pressure is off</li><li>You stop relying on motivation &amp; inspiration</li></ol><p>灣區日報作者的經驗我覺得很值得可以參考:</p><blockquote><p>我的經驗是，做 side project 的話，家裡的電腦永遠不關機，永遠開著 IDE、開發用的虛擬機、瀏覽器的 DevTools、iTerm2 等，每天有時間就做個 1、2 小時，沒時間弄個 10 分鐘、15 分鐘改個字體大小、顏色啥的也行，保持開發環境不變，第二天一有空閒就能接下去寫、很快進入狀態。</p></blockquote><p>每天都投入一點，即便只是五分鐘十分鐘，都是讓 side project 更前進。</p>]]></content>
     
@@ -267,7 +267,7 @@
     <link href="http://chadchang.github.io/2012/02/24/sorry/"/>
     <id>http://chadchang.github.io/2012/02/24/sorry/</id>
     <published>2012-02-24T09:12:00.000Z</published>
-    <updated>2018-03-14T09:54:33.689Z</updated>
+    <updated>2018-03-14T09:54:33.000Z</updated>
     
     <content type="html"><![CDATA[<font color="red">Sorry, I cannot find /</font>  <p>因為一堆奇怪問題把 heroku 重裝之後，deploy 上去一直出現這問題，搞了半天才發現要把 .gitignore 的 <strong><strong>public</strong></strong> 移除，否則 heroku 沒辦法讀取到，一個下午又這樣沒了…QQ</p>]]></content>
     
@@ -292,7 +292,7 @@
     <link href="http://chadchang.github.io/2012/02/24/xcode-4-dot-3fa-bu/"/>
     <id>http://chadchang.github.io/2012/02/24/xcode-4-dot-3fa-bu/</id>
     <published>2012-02-24T03:52:00.000Z</published>
-    <updated>2018-03-14T09:54:36.461Z</updated>
+    <updated>2018-03-14T09:54:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>就算 Xcode 已經在 Mac Store 了，有新版的還是不會提示更新，用了最新 4.3 版發現一些不一樣：<br><a id="more"></a></p><ol><li>New file 出來的 template 又不同了，好像每次改版都不同…Orz</li><li>archive 後送審的 UI 調整</li><li>New file 時把 view 跟 controler 整合在一起，會自動把<em>ViewController</em>加到檔名之後，也可以直接輸入要繼承的 class，但有一點不方便的是如果不是繼承 UIViewController，就不能產生.xib…Orz</li></ol><p>目前發現的是這樣，<strong><strong><code>markdown 學習使用中</code></strong></strong>~</p><p><strong><em>2012.02.25 update</em></strong></p><ol><li>下方 console 的部份可以設定預設位置了，類似android可以手動發送想要設定的 GPS 給 device 功能  (終於…)</li><li>收到 Notification 時，裡面的 NSLog 在 console 印不出來，不過看 device 內的 console log 又有…</li></ol>]]></content>
     
