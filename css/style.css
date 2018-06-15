@@ -883,8 +883,12 @@ a {
   -moz-background-size: 103%;
   background-size: 103%;
 }
-#header .header-nav .social .GitHub:before {
-  content: "\f113";
+#header .header-nav .social .GitHub {
+  background: url("//cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg") no-repeat #fff;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+  background-position: 50% 100%;
 }
 #header .header-nav .social .CodePen {
   background: url("//cdn.bootcss.com/logos/0.2.0/codepen-icon.svg") no-repeat #000;
