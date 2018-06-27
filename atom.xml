@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chadchang.github.io/"/>
-  <updated>2018-05-31T01:12:13.000Z</updated>
+  <updated>2018-06-27T16:31:49.690Z</updated>
   <id>http://chadchang.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>genstrings script 同時支援 objc&amp;swift</title>
+    <link href="http://chadchang.github.io/2018/06/26/genstring-for-objc-swift/"/>
+    <id>http://chadchang.github.io/2018/06/26/genstring-for-objc-swift/</id>
+    <published>2018-06-26T15:04:56.000Z</published>
+    <updated>2018-06-27T16:31:49.690Z</updated>
+    
+    <content type="html"><![CDATA[<p>因 project 要開始慢慢導入 swift，不小心可能就沒注意到原本 genstrings script 不會處理 swift file,<br>而要改成能同時支援<code>.m</code>與<code>.swift</code>檔的 script</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find $&#123;SRCROOT&#125;/MyApp/ \( -name &quot;*.swift&quot; -o -name &quot;*.m&quot; \) -print0 | xargs -0 genstrings -o $&#123;SRCROOT&#125;/MyApp/zh-Hant.lproj</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;因 project 要開始慢慢導入 swift，不小心可能就沒注意到原本 genstrings script 不會處理 swift file,&lt;br&gt;而要改成能同時支援&lt;code&gt;.m&lt;/code&gt;與&lt;code&gt;.swift&lt;/code&gt;檔的 script&lt;/p&gt;
+&lt;fig
+      
+    
+    </summary>
+    
+    
+      <category term="iOS" scheme="http://chadchang.github.io/tags/iOS/"/>
+    
+      <category term="Swift" scheme="http://chadchang.github.io/tags/Swift/"/>
+    
+      <category term="Objc" scheme="http://chadchang.github.io/tags/Objc/"/>
+    
+  </entry>
   
   <entry>
     <title>上了 Apple Store Today !!</title>
