@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chadchang.github.io/"/>
-  <updated>2018-06-27T16:31:49.690Z</updated>
+  <updated>2020-11-26T14:24:18.116Z</updated>
   <id>http://chadchang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小孩住院保險那些事</title>
+    <link href="http://chadchang.github.io/2020/11/26/%E5%B0%8F%E5%AD%A9%E4%BD%8F%E9%99%A2%E4%BF%9D%E9%9A%AA%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
+    <id>http://chadchang.github.io/2020/11/26/%E5%B0%8F%E5%AD%A9%E4%BD%8F%E9%99%A2%E4%BF%9D%E9%9A%AA%E9%82%A3%E4%BA%9B%E4%BA%8B/</id>
+    <published>2020-11-26T13:42:06.000Z</published>
+    <updated>2020-11-26T14:24:18.116Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一次稍微研究保險是四年多前小孩出生後，不然也是父母在小時候幫我保的人情保單一直繳錢沒有再動過，<br>稍微了解後就也把我的跟太太的做了一些調整。繳了四年的保費直到最近小孩連續發燒四天後到大醫院住院，才又再把這些保單拿出來看，也因此有一些心得。</p><h4 id="重點："><a href="#重點：" class="headerlink" title="重點："></a>重點：</h4><ol><li>如果學校有團保，看看有沒有住院醫療險，小孩的公幼就有提供。</li><li>公司如果有幫小孩保團保，也看看有沒有包含住院醫療險<br>(以上兩個通常都直覺只有意外險，沒想到皆有包含住院醫療險。)</li><li>到院當天沒有病房，所以在急診小兒區待了整整一天，這部份一般保險是不算住院的，也有少數保險有計算。</li><li>保險是用你的天數，而不是幾晚。不過病房費是用幾晚，這邊就會有多一點額度可以運用。</li><li>了解自己的保險額度到底是多少，這也是這篇想分享的重點。</li></ol><p>當沒病床要排隊時，院方問你要幾人房，因事前沒先準備，當下就只敢寫雙人跟三人健保房，因為再上去的單人房從一天 3000 ~ 12000 都有，如果清楚知道你的保險額是多少時就不用瞎猜了。</p><p><img src="/images/20201126-1.png" alt="保險額度"></p><p>(截自： <a href="https://finfo.tw/" target="_blank" rel="noopener">https://finfo.tw/</a>)</p><p>Finfo 這網站寫的蠻清楚的，輸入你買的單位後額度跟例子都寫給你看了。</p><p>這邊我們扣掉急診那晚總共在醫院四天三夜，這樣表示病房費有 2200 * 4 的額度，但我們雙人房一天 2000, 所以病房費只花了 6000。 另外這張還有住院補貼是60%，所以總額度就是6000x1.6 = 12800，而可申請最大值是 2200x4x 1.6 = 14080。 然後再加上右邊雜費手術費等。</p><p>另一種是如果上面算下來小於日額給付的話（這邊一天是2860），那可以改選日額給付，也不用附收據，尤其在多家保險都需要正本理賠時就要選擇哪一家用哪個方案比較好。</p><p>我們一輩子有極大機率會用到保險，能先了解這些在需要使用時能有一個底，或者可以享受更好住院醫療品質。</p><p>Note: 以上還沒實際申請理賠，不保證完全可以拿到我計算的，但有先跟保險業務員討論過了解大致是這樣計算的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;第一次稍微研究保險是四年多前小孩出生後，不然也是父母在小時候幫我保的人情保單一直繳錢沒有再動過，&lt;br&gt;稍微了解後就也把我的跟太太的做了一些調整。繳了四年的保費直到最近小孩連續發燒四天後到大醫院住院，才又再把這些保單拿出來看，也因此有一些心得。&lt;/p&gt;
+&lt;h4 id=&quot;重點
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>genstrings script 同時支援 objc&amp;swift</title>
@@ -95,27 +118,6 @@
       <category term="editor" scheme="http://chadchang.github.io/tags/editor/"/>
     
       <category term="markdown" scheme="http://chadchang.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>規劃自己人生的方式</title>
-    <link href="http://chadchang.github.io/2016/12/02/life-plan/"/>
-    <id>http://chadchang.github.io/2016/12/02/life-plan/</id>
-    <published>2016-12-02T06:02:32.000Z</published>
-    <updated>2017-01-02T13:18:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近一直在思考人生，看到相關的文章等就會特別注意，這邊筆記一下收集到的一些資料。</p><a id="more"></a><h4 id="How-to-Crush-Your-Goals-in-2017-According-to-Harvard-Research-–-The-Mission-–-Medium"><a href="#How-to-Crush-Your-Goals-in-2017-According-to-Harvard-Research-–-The-Mission-–-Medium" class="headerlink" title="How to Crush Your Goals in 2017, According to Harvard Research – The Mission – Medium"></a><a href="https://medium.com/the-mission/how-to-crush-your-goals-in-2017-according-to-harvard-psychologists-1e82beb80677#.qll6y9uu4" target="_blank" rel="noopener">How to Crush Your Goals in 2017, According to Harvard Research – The Mission – Medium</a></h4><blockquote><p>研究指出只有 8% 的人可以完成年度計畫。</p></blockquote><p>本篇可以與<a href="http://www.rich01.com/2017/01/201710.html?m=1" target="_blank" rel="noopener">2017如何設定目標？哈佛大學研究：一個小技巧，比別人成功10倍！ - Mr. Market 市場先生 - 投資理財入門</a> 搭配一起看，概念是差不多的</p><ul><li>取代壞習慣</li><li>建立小目標</li><li>留心獎項</li><li>目標明確<ul><li>可量化：退休 -&gt; 存下500萬退休金</li><li>面對現實、有可能達成： 賺一億＆上火星等不切實際</li><li>有時效性</li><li>明確的計畫： 減肥五公斤，是目標卻無法執行，每天跑 5 km 就明確多了</li></ul></li></ul><p>兩個小技巧：</p><ol><li>寫下會遇到的障礙</li><li>寫下願意付出的代價：我今年要看 100本書，靠每天通勤，及中午休息的時間進行，可能會很累但值得</li></ol><h4 id="How-To-Invest-In-Yourself"><a href="#How-To-Invest-In-Yourself" class="headerlink" title="How To Invest In Yourself"></a><a href="https://medium.com/hi-my-name-is-jon/how-to-invest-in-yourself-a98dfd33e81a#.e4jxth2w7" target="_blank" rel="noopener">How To Invest In Yourself</a></h4><ul><li>記事本</li><li>Spreadsheet (Airtable)</li><li>Browser</li><li>Calendar</li></ul><p>Setp 1: 100 件事情，兩周持續修改調整</p><p>Step 2: 分成三類：</p><ol><li>需要技能才能做<br>建立技能樹表，分成四欄：</li></ol><ul><li>skill 名稱</li><li>Research</li><li>Action</li><li>Progress</li></ul><ol start="2"><li><p>可以立刻做的<br>立刻做吧</p></li><li><p>需要時間做<br>安排時間，變成一個固定的行程</p></li></ol><p>作者在每天早餐時讀他的列表，這也是一種動力。</p><h4 id="三個問題弄清楚自己想做什麼"><a href="#三個問題弄清楚自己想做什麼" class="headerlink" title="三個問題弄清楚自己想做什麼"></a><a href="https://m.igetget.com/share/audio/aid/Yqua0jl95GivuOFdvlC0?from=singlemessage&isappinstalled=1" target="_blank" rel="noopener">三個問題弄清楚自己想做什麼</a></h4><p>這三個問題分別是</p><ol><li>如果世界上所有工作的收入都是一樣的，那你會做什麼？</li><li>你希望自己的孩子以後做什麼？</li><li>如果還有十年的壽命，你會做什麼？</li></ol><p>的確以前的舉例都會用你死前到底要做什麼來思考，這篇文章給了不同的方向: <code>10 年</code>。這樣想出來的答案才不會單單只是陪伴家人等在短時間必須的事。而十年中，每件事都是三個月左右以上的事情，然後規劃去做。</p><h4 id="1年計畫，看到10年後的自己"><a href="#1年計畫，看到10年後的自己" class="headerlink" title="1年計畫，看到10年後的自己"></a><a href="http://www.30.com.tw/article_content_24691.html" target="_blank" rel="noopener">1年計畫，看到10年後的自己</a></h4><p>決定出今年要做的 10 件事情</p><p>STEP1：不要受限於10件這個數字，而是很自由地想，接下來的一年中，如果什麼都可以的話，你想要完成的事情一共有哪些，請列出一張清單，內容愈詳細愈好，愈明確愈好，即使20項、30項也沒有關係。</p><p>STEP2：這些事情當中，是否有些在一年之後，有做到也可以，沒做到也沒關係的事情？如果有的話，請把那些項目畫掉。</p><p>STEP3：在剩下的清單中，請刪去那些雖然想做，但是自己心知肚明，一定做不到，或是不會去做的事。</p><p>STEP4：剩餘的清單裡，有沒有哪些事就算沒有人規定，我也非做不可，就算沒人注意到也沒關係，因為這些事情對我來說很重要？挑出這些事情來，放到最前面。</p><p>最後剩下的，才是真正今年值得完成的10件事。</p><p>跟未來的我對話</p><ul><li>10年後，我會長什麼樣子？</li><li>10年後，我住在什麼樣的房子？這間房子在哪裡？</li><li>10年後，我想看自己身上穿什麼衣服？</li><li>10年後，我身邊有什麼人？他們跟我的關係是什麼？</li><li>10年後，我會每天工作嗎？做什麼？工作型態如何？</li></ul><h4 id="你想要過怎麼樣的人生？畫一張「夢想金字塔」，決定努力的方向！｜經理人"><a href="#你想要過怎麼樣的人生？畫一張「夢想金字塔」，決定努力的方向！｜經理人" class="headerlink" title="你想要過怎麼樣的人生？畫一張「夢想金字塔」，決定努力的方向！｜經理人"></a><a href="https://www.managertoday.com.tw/articles/view/53559" target="_blank" rel="noopener">你想要過怎麼樣的人生？畫一張「夢想金字塔」，決定努力的方向！｜經理人</a></h4><p>一文則有兩張不錯的圖幫我們去思考不同方向</p><p><img src="/images/pyramid.jpeg" alt="夢想金字塔"></p><p><img src="/images/my_grid.jpeg" alt="九宮格"></p><h4 id="【Hi！35】7件事，為你的職場35歲做準備"><a href="#【Hi！35】7件事，為你的職場35歲做準備" class="headerlink" title="【Hi！35】7件事，為你的職場35歲做準備"></a><a href="https://plus.104.com.tw/activity/d9f73096-a4bf-4ee1-8d0f-5a69cea9462b" target="_blank" rel="noopener">【Hi！35】7件事，為你的職場35歲做準備</a></h4><ol><li>確認自己未來的職涯方向：並朝目標建構職涯發展的計畫，比如40歲前應該要擔任公司中高階主管（如資深經理、處長、協理職務），或是念完碩士在職專班學程。</li><li>努力適應職場文化：由於年齡已經老大不小了，應該要更認真投入職場，累積個人在職場上的成功經驗，例如為公司創造具體貢獻與實績、為公司與自己取得政府及其他機構的肯定（如取得傑出經理人或國家級的獎項），此時不宜再輕易轉換工作。</li></ol><ol start="3"><li><p>努力學習與持續成長：這時期的充電學習與成長格外重要，不管是強化自己的專業領域，或是英文、日文、韓文、越南文等國際語文，都是讓自己成為國際人才所必需的投資。</p></li><li><p>調整習慣與興趣：隨著年紀逐漸增長，過去如果沒有養成良好運動、閱讀、飲食、睡眠、紓壓的習慣或興趣，35歲以後就必須開始培養適當的興趣，不宜再浪擲人生了。</p></li><li><p>積極表現、獲得晉升：有些人在30歲到40歲階段能夠展現優越的專業知識，發揮成熟的領導魅力，因此屢受拔擢，從課長或主任職級，一路晉升副理、經理到處長職務，這階段需要積極展現工作的投入與熱忱。</p></li><li><p>增強人際介面與互動：隨著工作資歷的成長，必須廣結善緣，在各類場合認識與結交職場的貴人，如有餘力時，參加非營利組織或擔任志工，為協助他人與社會盡一份心力。此時家族長輩的年齡及健康狀況不如過往，撥出空檔時間多陪伴長輩，也是強化家族人際關係的作法。</p></li><li><p>透過職涯社群建立個人形象：例如在104職涯社群建立個人檔案，分享自己的職涯發展、專業技能證照、管理心得與成功經驗；在臉書分享自己的生活動態與交友狀況，都能夠讓企業家或是人資主管得知您的價值，讓企業主動邀請您加入經營團隊。</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近一直在思考人生，看到相關的文章等就會特別注意，這邊筆記一下收集到的一些資料。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="plan" scheme="http://chadchang.github.io/tags/plan/"/>
     
   </entry>
   
