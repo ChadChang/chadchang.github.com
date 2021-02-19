@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chadchang.github.io/"/>
-  <updated>2021-02-08T13:23:07.678Z</updated>
+  <updated>2021-02-19T12:38:04.532Z</updated>
   <id>http://chadchang.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>移除在 Cocoapods 上自己開發的 lib</title>
+    <link href="http://chadchang.github.io/2021/02/19/deprecate-cocoapods-lib/"/>
+    <id>http://chadchang.github.io/2021/02/19/deprecate-cocoapods-lib/</id>
+    <published>2021-02-19T12:32:00.000Z</published>
+    <updated>2021-02-19T12:38:04.532Z</updated>
+    
+    <content type="html"><![CDATA[<p>因為自己原本有放到 Cocoapods 的 library 想重寫一套而且是不同名稱，所以想要把原本的下架。</p><ol><li>先 <code>pod trunk register 當初申請的 email</code></li><li><code>pod trunk me</code> 可以看這帳號是哪些 library owner</li><li><code>pod trunk delete YOUR_LIB_NAME 1.1</code> 刪除 1.1 這版本 </li><li><code>pod trunk deprecate YOUR_LIB_NAME</code> 即可將這 library 標示為 deprecated</li></ol><p>似乎沒有完整刪除的辦法，看到大家也說不推薦這樣做</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;因為自己原本有放到 Cocoapods 的 library 想重寫一套而且是不同名稱，所以想要把原本的下架。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先 &lt;code&gt;pod trunk register 當初申請的 email&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pod trun
+      
+    
+    </summary>
+    
+    
+    
+      <category term="cocoapods, iOS" scheme="http://chadchang.github.io/tags/cocoapods-iOS/"/>
+    
+  </entry>
   
   <entry>
     <title>在 Cocoapods Development Pod 中加入 Test</title>

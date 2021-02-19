@@ -15,18 +15,17 @@
 
 
 
-<meta name="description" content="第一次稍微研究保險是四年多前小孩出生後，不然也是父母在小時候幫我保的人情保單一直繳錢沒有再動過，稍微了解後就也把我的跟太太的做了一些調整。繳了四年的保費直到最近小孩連續發燒四天後到大醫院住院，才又再把這些保單拿出來看，也因此有一些心得。身邊也越來越多朋友為人父母，因此在這分享出來。 重點： 如果學校有團保，看看有沒有住院醫療險，小孩的公幼就有提供。 公司如果有幫小孩保團保，也看看有沒有包含住院醫療">
+<meta name="description" content="因為自己原本有放到 Cocoapods 的 library 想重寫一套而且是不同名稱，所以想要把原本的下架。  先 pod trunk register 當初申請的 email pod trunk me 可以看這帳號是哪些 library owner pod trunk delete YOUR_LIB_NAME 1.1 刪除 1.1 這版本  pod trunk deprecate YOUR_LI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小孩住院保險那些事">
-<meta property="og:url" content="http://chadchang.github.io/2020/11/26/child-insurance/index.html">
+<meta property="og:title" content="移除在 Cocoapods 上自己開發的 lib">
+<meta property="og:url" content="http://chadchang.github.io/2021/02/19/deprecate-cocoapods-lib/index.html">
 <meta property="og:site_name" content="Chad">
-<meta property="og:description" content="第一次稍微研究保險是四年多前小孩出生後，不然也是父母在小時候幫我保的人情保單一直繳錢沒有再動過，稍微了解後就也把我的跟太太的做了一些調整。繳了四年的保費直到最近小孩連續發燒四天後到大醫院住院，才又再把這些保單拿出來看，也因此有一些心得。身邊也越來越多朋友為人父母，因此在這分享出來。 重點： 如果學校有團保，看看有沒有住院醫療險，小孩的公幼就有提供。 公司如果有幫小孩保團保，也看看有沒有包含住院醫療">
-<meta property="og:image" content="http://chadchang.github.io/images/20201126-1.png">
-<meta property="article:published_time" content="2020-11-26T13:42:06.000Z">
-<meta property="article:modified_time" content="2020-11-26T14:39:36.539Z">
+<meta property="og:description" content="因為自己原本有放到 Cocoapods 的 library 想重寫一套而且是不同名稱，所以想要把原本的下架。  先 pod trunk register 當初申請的 email pod trunk me 可以看這帳號是哪些 library owner pod trunk delete YOUR_LIB_NAME 1.1 刪除 1.1 這版本  pod trunk deprecate YOUR_LI">
+<meta property="article:published_time" content="2021-02-19T12:32:00.000Z">
+<meta property="article:modified_time" content="2021-02-19T12:38:04.532Z">
 <meta property="article:author" content="Chad Chang">
+<meta property="article:tag" content="cocoapods, iOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://chadchang.github.io/images/20201126-1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>小孩住院保險那些事 | Chad</title>
+<title>移除在 Cocoapods 上自己開發的 lib | Chad</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -243,11 +242,11 @@
     </div>
     <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
 </nav>
-      <div class="body-wrap"><article id="post-child-insurance" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-deprecate-cocoapods-lib" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="" class="article-date">
-      <time datetime="2020-11-26T13:42:06.000Z" itemprop="datePublished">2020-11-26</time>
+      <time datetime="2021-02-19T12:32:00.000Z" itemprop="datePublished">2021-02-19</time>
 </a>
 
 
@@ -262,7 +261,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      小孩住院保險那些事
+      移除在 Cocoapods 上自己開發的 lib
     </h1>
   
 
@@ -272,6 +271,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/cocoapods-iOS/" rel="tag">cocoapods, iOS</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -279,22 +282,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>第一次稍微研究保險是四年多前小孩出生後，不然也是父母在小時候幫我保的人情保單一直繳錢沒有再動過，<br>稍微了解後就也把我的跟太太的做了一些調整。繳了四年的保費直到最近小孩連續發燒四天後到大醫院住院，才又再把這些保單拿出來看，也因此有一些心得。身邊也越來越多朋友為人父母，因此在這分享出來。</p>
-<h4 id="重點："><a href="#重點：" class="headerlink" title="重點："></a>重點：</h4><ol>
-<li>如果學校有團保，看看有沒有住院醫療險，小孩的公幼就有提供。</li>
-<li>公司如果有幫小孩保團保，也看看有沒有包含住院醫療險<br>(以上兩個通常都直覺只有意外險，沒想到皆有包含住院醫療險。)</li>
-<li>到院當天沒有病房，所以在急診小兒區待了整整一天，這部份一般保險是不算住院的，也有少數保險有計算。</li>
-<li>保險是用你的天數，而不是幾晚。不過病房費是用幾晚，這邊就會有多一點額度可以運用。</li>
-<li>了解自己的保險額度到底是多少，這也是這篇想分享的重點。</li>
+        <p>因為自己原本有放到 Cocoapods 的 library 想重寫一套而且是不同名稱，所以想要把原本的下架。</p>
+<ol>
+<li>先 <code>pod trunk register 當初申請的 email</code></li>
+<li><code>pod trunk me</code> 可以看這帳號是哪些 library owner</li>
+<li><code>pod trunk delete YOUR_LIB_NAME 1.1</code> 刪除 1.1 這版本 </li>
+<li><code>pod trunk deprecate YOUR_LIB_NAME</code> 即可將這 library 標示為 deprecated</li>
 </ol>
-<p>當沒病床要排隊時，院方問你要幾人房，因事前沒先準備，當下就只敢寫雙人跟三人健保房，因為再上去的單人房從一天 3000 ~ 12000 都有，如果清楚知道你的保險額是多少時就不用瞎猜了。</p>
-<p><img src="/images/20201126-1.png" alt="保險額度"></p>
-<p>(截自： <a href="https://finfo.tw/" target="_blank" rel="noopener">https://finfo.tw/</a>)</p>
-<p>Finfo 這網站寫的蠻清楚的，輸入你買的單位後額度跟例子都寫給你看了。</p>
-<p>這邊我們扣掉急診那晚總共在醫院四天三夜，這樣表示病房費有 2200 * 4 的額度，但我們雙人房一天 2000, 所以病房費只花了 6000。 另外這張還有住院補貼是60%，所以總額度就是6000x1.6 = 12800，而可申請最大值是 2200x4x 1.6 = 14080。 然後再加上右邊雜費手術費等。</p>
-<p>另一種是如果上面算下來小於日額給付的話（這邊一天是2860），那可以改選日額給付，也不用附收據，尤其在多家保險都需要正本理賠時就要選擇哪一家用哪個方案比較好。</p>
-<p>我們一輩子有極大機率會用到保險，能先了解這些在需要使用時能有一個底，或者可以享受更好住院醫療品質。</p>
-<p>Note: 以上還沒實際申請理賠，不保證完全可以拿到我計算的，但有先跟保險業務員討論過了解大致是這樣計算的。</p>
+<p>似乎沒有完整刪除的辦法，看到大家也說不推薦這樣做</p>
 
       
     </div>
@@ -306,16 +301,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="../../../../2021/02/08/unit-test-in-cocoapods-development-pod/">
-                    在 Cocoapods Development Pod 中加入 Test
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="../../../../2018/06/26/genstring-for-objc-swift/">
-                    genstrings script 同時支援 objc&amp;swift
+                <a href="../../08/unit-test-in-cocoapods-development-pod/">
+                    在 Cocoapods Development Pod 中加入 Test
                 </a>
             </div>
         
@@ -327,7 +316,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目錄</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#重點："><span class="toc-number">1.</span> <span class="toc-text">重點：</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -357,8 +346,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://chadchang.github.io/2020/11/26/child-insurance/';
-            this.page.identifier = '2020/11/26/child-insurance/';
+            this.page.url = 'http://chadchang.github.io/2021/02/19/deprecate-cocoapods-lib/';
+            this.page.identifier = '2021/02/19/deprecate-cocoapods-lib/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -380,21 +369,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="../../../../2021/02/08/unit-test-in-cocoapods-development-pod/" title="上一篇: 在 Cocoapods Development Pod 中加入 Test">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主頁"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="../../../../2018/06/26/genstring-for-objc-swift/" title="下一篇: genstrings script 同時支援 objc&amp;swift">
+            <a href="../../08/unit-test-in-cocoapods-development-pod/" title="下一篇: 在 Cocoapods Development Pod 中加入 Test">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="../../../../2021/02/19/deprecate-cocoapods-lib/">移除在 Cocoapods 上自己開發的 lib</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2021/02/08/unit-test-in-cocoapods-development-pod/">在 Cocoapods Development Pod 中加入 Test</a></li><li class="post-list-item"><a class="post-list-link" href="">小孩住院保險那些事</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2018/06/26/genstring-for-objc-swift/">genstrings script 同時支援 objc&swift</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2018/05/25/apple-today/">上了 Apple Store Today !!</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/12/05/switch-to-atom/">用 Atom 寫 markdown</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/21/background-practices/">Common Background Practice</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/19/objcio-2-api/">Concurrent Programming 的 API</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/08/side-project/">做一個 Side Project</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/10/21/feature/">同一天 App Store、Google Play 雙 Feature</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2014/05/10/gcd/">GCD 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2014/03/30/constants/">Constants</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2013/10/25/import-headershi-wu-fa-zhao-dao-cocoapods-shi-yong-de-framework-header/">import header時無法找到cocoapods 使用的framework header</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2012/02/24/sorry/">Heroku : Sorry , I cannot find /</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2012/02/24/xcode-4-dot-3fa-bu/">Xcode 4.3 發佈</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2011/12/18/review-clcok-v1-dot-0shang-jia-la/">Review Clock v1.0 上架啦!!! (已下架)</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">移除在 Cocoapods 上自己開發的 lib</a></li><li class="post-list-item"><a class="post-list-link" href="../../08/unit-test-in-cocoapods-development-pod/">在 Cocoapods Development Pod 中加入 Test</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2020/11/26/child-insurance/">小孩住院保險那些事</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2018/06/26/genstring-for-objc-swift/">genstrings script 同時支援 objc&swift</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2018/05/25/apple-today/">上了 Apple Store Today !!</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/12/05/switch-to-atom/">用 Atom 寫 markdown</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/21/background-practices/">Common Background Practice</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/19/objcio-2-api/">Concurrent Programming 的 API</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/08/side-project/">做一個 Side Project</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/10/21/feature/">同一天 App Store、Google Play 雙 Feature</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2014/05/10/gcd/">GCD 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2014/03/30/constants/">Constants</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2013/10/25/import-headershi-wu-fa-zhao-dao-cocoapods-shi-yong-de-framework-header/">import header時無法找到cocoapods 使用的framework header</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2012/02/24/sorry/">Heroku : Sorry , I cannot find /</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2012/02/24/xcode-4-dot-3fa-bu/">Xcode 4.3 發佈</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2011/12/18/review-clcok-v1-dot-0shang-jia-la/">Review Clock v1.0 上架啦!!! (已下架)</a></li></ul>
 
 
 
