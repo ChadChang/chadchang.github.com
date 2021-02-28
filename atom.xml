@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chadchang.github.io/"/>
-  <updated>2021-02-20T12:02:14.788Z</updated>
+  <updated>2021-02-28T16:30:21.615Z</updated>
   <id>http://chadchang.github.io/</id>
   
   <author>
@@ -17,19 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用 Github Action 為 CCRegionSelector 加上測試的 CI</title>
+    <link href="http://chadchang.github.io/2021/02/27/github-action/"/>
+    <id>http://chadchang.github.io/2021/02/27/github-action/</id>
+    <published>2021-02-27T11:01:36.000Z</published>
+    <updated>2021-02-28T16:30:21.615Z</updated>
+    
+    <content type="html"><![CDATA[<p>目前開源的 project 使用 Github Action 是免費的，剛好 travis.ci 也改成超過免費額度就要收費了，所以趁機為 CCRegionSelector 加上 Github Action。</p><p>首先先在 project 目錄下的 <code>.github/workflows</code> 資料夾中加上 yml 檔，我這邊命名為 <code>CI-iOS.yml</code>。<br>Github Action 可以設定的參數非常多，這邊目標只是在當 code push 到 master 時才跑測試確認沒問題。</p><a id="more"></a><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="symbol">name:</span> CI-iOS</span><br><span class="line"></span><br><span class="line"><span class="comment"># Controls when the action will run. Triggers the workflow on push or pull request</span></span><br><span class="line"><span class="comment"># events but only for the master branch</span></span><br><span class="line"><span class="symbol">on:</span></span><br><span class="line">  <span class="symbol">push:</span></span><br><span class="line">    <span class="symbol">branches:</span> [ master ]</span><br><span class="line"></span><br><span class="line"><span class="comment"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span></span><br><span class="line"><span class="symbol">jobs:</span></span><br><span class="line">  <span class="comment"># This workflow contains a single job called "build"</span></span><br><span class="line">  build-<span class="keyword">and</span>-<span class="symbol">test:</span></span><br><span class="line">    <span class="comment"># The type of runner that the job will run on</span></span><br><span class="line">    runs-<span class="symbol">on:</span> macos-latest</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Steps represent a sequence of tasks that will be executed as part of the job</span></span><br><span class="line">    <span class="symbol">steps:</span></span><br><span class="line">    <span class="comment"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span></span><br><span class="line">    - <span class="symbol">uses:</span> actions/checkout@v2</span><br><span class="line"></span><br><span class="line">    - <span class="symbol">name:</span> Select Xcode</span><br><span class="line">      <span class="symbol">run:</span> sudo xcode-select -switch /Applications/Xcode_12.<span class="number">4</span>.app</span><br><span class="line">      </span><br><span class="line">    - <span class="symbol">name:</span> Xcode version</span><br><span class="line">      <span class="symbol">run:</span> /usr/bin/xcodebuild -version</span><br><span class="line">      </span><br><span class="line">    - <span class="symbol">name:</span> Build <span class="keyword">and</span> Test</span><br><span class="line">      <span class="symbol">run:</span> xcodebuild -workspace Example/CCRegionSelector.xcworkspace -scheme CCRegionSelector-Unit-Tests CODE_SIGN_IDENTITY=<span class="string">""</span> -configuration Debug CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination <span class="string">"platform=iOS Simulator,name=iPhone 12,OS=14.4"</span> ONLY_ACTIVE_ARCH=YES test</span><br></pre></td></tr></table></figure><p>同時為了 xcodebuild 比較好寫，可以把 CCRegionSelector-Unit-Tests 加到 Example 中的 Test 中，如圖下所示</p><img src="/images/github-action.png" alt="github action" width="350"/><p>傳上去後，每次有 code push 到 master 便會自動啟動測試了</p><p>參考位置：<a href="https://github.com/ChadChang/CCRegionSelector" target="_blank" rel="noopener">https://github.com/ChadChang/CCRegionSelector</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目前開源的 project 使用 Github Action 是免費的，剛好 travis.ci 也改成超過免費額度就要收費了，所以趁機為 CCRegionSelector 加上 Github Action。&lt;/p&gt;
+&lt;p&gt;首先先在 project 目錄下的 &lt;code&gt;.github/workflows&lt;/code&gt; 資料夾中加上 yml 檔，我這邊命名為 &lt;code&gt;CI-iOS.yml&lt;/code&gt;。&lt;br&gt;Github Action 可以設定的參數非常多，這邊目標只是在當 code push 到 master 時才跑測試確認沒問題。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="iOS" scheme="http://chadchang.github.io/tags/iOS/"/>
+    
+      <category term="github" scheme="http://chadchang.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CCRegionSelector 發佈</title>
     <link href="http://chadchang.github.io/2021/02/20/CCRegionSelector-announce/"/>
     <id>http://chadchang.github.io/2021/02/20/CCRegionSelector-announce/</id>
     <published>2021-02-20T11:46:17.000Z</published>
-    <updated>2021-02-20T12:02:14.788Z</updated>
+    <updated>2021-02-27T10:49:49.050Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://github.com/ChadChang/CCRegionSelector" target="_blank" rel="noopener">https://github.com/ChadChang/CCRegionSelector</a></p><p><img src="/images/publish.png" alt="publish"></p><img src="/images/demo.png" alt="Demo" width="350"/><p>終於將很久以前寫的 CCCountrySelector 改版整個重寫變更乾淨一點也嘗試加入一些 TDD 去做開發，繼續努力！</p>]]></content>
+    <content type="html"><![CDATA[<p>下載位置：<a href="https://github.com/ChadChang/CCRegionSelector" target="_blank" rel="noopener">https://github.com/ChadChang/CCRegionSelector</a></p><p><img src="/images/publish.png" alt="publish"></p><img src="/images/demo.png" alt="Demo" width="350"/><p>終於將很久以前寫的 CCCountrySelector 改版整個重寫變更乾淨一點也嘗試加入一些 TDD 去做開發，繼續努力！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;https://github.com/ChadChang/CCRegionSelector&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/ChadChang/CCRegionSelector&lt;/a&gt;&lt;
+        &lt;p&gt;下載位置：&lt;a href=&quot;https://github.com/ChadChang/CCRegionSelector&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/ChadChang/CCRegionSelector
       
     
     </summary>

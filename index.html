@@ -175,7 +175,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/App-Store/" rel="tag">App Store</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Atom/" rel="tag">Atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/CocoaPods/" rel="tag">CocoaPods</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/GCD/" rel="tag">GCD</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Google-Play/" rel="tag">Google Play</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Heroku/" rel="tag">Heroku</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Objc/" rel="tag">Objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Review-Clock/" rel="tag">Review Clock</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Swift/" rel="tag">Swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Work/" rel="tag">Work</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Xcode/" rel="tag">Xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/iOS/" rel="tag">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/objc-io/" rel="tag">objc.io</a></li></ul>
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/App-Store/" rel="tag">App Store</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Atom/" rel="tag">Atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/CocoaPods/" rel="tag">CocoaPods</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/GCD/" rel="tag">GCD</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Google-Play/" rel="tag">Google Play</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Heroku/" rel="tag">Heroku</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Objc/" rel="tag">Objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Review-Clock/" rel="tag">Review Clock</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Swift/" rel="tag">Swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Work/" rel="tag">Work</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/Xcode/" rel="tag">Xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/editor/" rel="tag">editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/iOS/" rel="tag">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="tags/objc-io/" rel="tag">objc.io</a></li></ul>
                     </div>
                 </section>
                 
@@ -242,6 +242,71 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-github-action" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="2021/02/27/github-action/" class="article-date">
+      <time datetime="2021-02-27T11:01:36.000Z" itemprop="datePublished">2021-02-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2021/02/27/github-action/">使用 Github Action 為 CCRegionSelector 加上測試的 CI</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>目前開源的 project 使用 Github Action 是免費的，剛好 travis.ci 也改成超過免費額度就要收費了，所以趁機為 CCRegionSelector 加上 Github Action。</p>
+<p>首先先在 project 目錄下的 <code>.github/workflows</code> 資料夾中加上 yml 檔，我這邊命名為 <code>CI-iOS.yml</code>。<br>Github Action 可以設定的參數非常多，這邊目標只是在當 code push 到 master 時才跑測試確認沒問題。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/github/" rel="tag">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/iOS/" rel="tag">iOS</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="2021/02/27/github-action/#more">查看全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-CCRegionSelector-announce" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -271,7 +336,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><a href="https://github.com/ChadChang/CCRegionSelector" target="_blank" rel="noopener">https://github.com/ChadChang/CCRegionSelector</a></p>
+        <p>下載位置：<a href="https://github.com/ChadChang/CCRegionSelector" target="_blank" rel="noopener">https://github.com/ChadChang/CCRegionSelector</a></p>
 <p><img src="/images/publish.png" alt="publish"></p>
 <img src="/images/demo.png" alt="Demo" width="350"/>
 
@@ -801,72 +866,6 @@
         <p class="article-more-link">
           <a href="2016/11/19/objcio-2-api/#more">查看全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-side-project" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2016/11/08/side-project/" class="article-date">
-      <time datetime="2016-11-08T13:24:39.000Z" itemprop="datePublished">2016-11-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2016/11/08/side-project/">做一個 Side Project</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>在 App 寫了 六七年後，反而想再回去寫一點 Web 等不同於 App 的東西，畢竟過了這麼多年，現在整個 Web 世界又大大不同了。看到灣區日報的作者一直在持續推進他的東西，也學寫了 App 而且更新頻繁，一直在想自己有沒有可以效法他好好做一個自己用會感到興奮的東西。在思考之餘，剛好又在灣區日報看到了這篇 <a href="https://ponyfoo.com/articles/making-time-for-side-projects" target="_blank" rel="noopener">Making Time for Side Projects: A Daily Habit</a>，更確定是該來做些什麼了 :smile:</p>
-<ol>
-<li>It’s easier to get started</li>
-<li>The pressure is off</li>
-<li>You stop relying on motivation &amp; inspiration</li>
-</ol>
-<p>灣區日報作者的經驗我覺得很值得可以參考:</p>
-<blockquote>
-<p>我的經驗是，做 side project 的話，家裡的電腦永遠不關機，永遠開著 IDE、開發用的虛擬機、瀏覽器的 DevTools、iTerm2 等，每天有時間就做個 1、2 小時，沒時間弄個 10 分鐘、15 分鐘改個字體大小、顏色啥的也行，保持開發環境不變，第二天一有空閒就能接下去寫、很快進入狀態。</p>
-</blockquote>
-<p>每天都投入一點，即便只是五分鐘十分鐘，都是讓 side project 更前進。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
       
       <div class="clearfix"></div>
     </div>

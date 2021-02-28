@@ -15,17 +15,20 @@
 
 
 
-<meta name="description" content="Objective-C 的 constants 也是有學問的 常常是用 #define myConstants var 來處理一些變數，但更好的作法是用 const &#x2F;&#x2F; Constants.hextern NSString * const MY_CONSTANT;&#x2F;&#x2F; Constants.mNSString * const MY_CONSTANT &#x3D; @&quot;my_constant&quot;;  當希望此變">
+<meta name="description" content="目前開源的 project 使用 Github Action 是免費的，剛好 travis.ci 也改成超過免費額度就要收費了，所以趁機為 CCRegionSelector 加上 Github Action。 首先先在 project 目錄下的 .github&#x2F;workflows 資料夾中加上 yml 檔，我這邊命名為 CI-iOS.yml。Github Action 可以設定的參數非常多，這邊目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Constants">
-<meta property="og:url" content="http://chadchang.github.io/2014/03/30/constants/index.html">
+<meta property="og:title" content="使用 Github Action 為 CCRegionSelector 加上測試的 CI">
+<meta property="og:url" content="http://chadchang.github.io/2021/02/27/github-action/index.html">
 <meta property="og:site_name" content="Chad">
-<meta property="og:description" content="Objective-C 的 constants 也是有學問的 常常是用 #define myConstants var 來處理一些變數，但更好的作法是用 const &#x2F;&#x2F; Constants.hextern NSString * const MY_CONSTANT;&#x2F;&#x2F; Constants.mNSString * const MY_CONSTANT &#x3D; @&quot;my_constant&quot;;  當希望此變">
-<meta property="article:published_time" content="2014-03-30T06:06:00.000Z">
-<meta property="article:modified_time" content="2016-11-18T14:28:13.000Z">
+<meta property="og:description" content="目前開源的 project 使用 Github Action 是免費的，剛好 travis.ci 也改成超過免費額度就要收費了，所以趁機為 CCRegionSelector 加上 Github Action。 首先先在 project 目錄下的 .github&#x2F;workflows 資料夾中加上 yml 檔，我這邊命名為 CI-iOS.yml。Github Action 可以設定的參數非常多，這邊目">
+<meta property="og:image" content="http://chadchang.github.io/images/github-action.png">
+<meta property="article:published_time" content="2021-02-27T11:01:36.000Z">
+<meta property="article:modified_time" content="2021-02-28T16:30:21.615Z">
 <meta property="article:author" content="Chad Chang">
 <meta property="article:tag" content="iOS">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://chadchang.github.io/images/github-action.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Constants | Chad</title>
+<title>使用 Github Action 為 CCRegionSelector 加上測試的 CI | Chad</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -242,11 +245,11 @@
     </div>
     <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
 </nav>
-      <div class="body-wrap"><article id="post-constants" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-github-action" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="" class="article-date">
-      <time datetime="2014-03-30T06:06:00.000Z" itemprop="datePublished">2014-03-30</time>
+      <time datetime="2021-02-27T11:01:36.000Z" itemprop="datePublished">2021-02-27</time>
 </a>
 
 
@@ -261,7 +264,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Constants
+      使用 Github Action 為 CCRegionSelector 加上測試的 CI
     </h1>
   
 
@@ -272,7 +275,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/iOS/" rel="tag">iOS</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/github/" rel="tag">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/iOS/" rel="tag">iOS</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -282,22 +285,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Objective-C 的 constants 也是有學問的</p>
-<p>常常是用 <code>#define myConstants var</code> 來處理一些變數，但更好的作法是用 const</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Constants.h</span></span><br><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MY_CONSTANT;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Constants.m</span></span><br><span class="line"><span class="built_in">NSString</span> * <span class="keyword">const</span> MY_CONSTANT = <span class="string">@"my_constant"</span>;</span><br></pre></td></tr></table></figure>
+        <p>目前開源的 project 使用 Github Action 是免費的，剛好 travis.ci 也改成超過免費額度就要收費了，所以趁機為 CCRegionSelector 加上 Github Action。</p>
+<p>首先先在 project 目錄下的 <code>.github/workflows</code> 資料夾中加上 yml 檔，我這邊命名為 <code>CI-iOS.yml</code>。<br>Github Action 可以設定的參數非常多，這邊目標只是在當 code push 到 master 時才跑測試確認沒問題。</p>
+<a id="more"></a>
 
-<p>當希望此變數不為 global 時，則用 static</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Constants.m</span></span><br><span class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> CONSTANT = <span class="string">@"my_constant"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="symbol">name:</span> CI-iOS</span><br><span class="line"></span><br><span class="line"><span class="comment"># Controls when the action will run. Triggers the workflow on push or pull request</span></span><br><span class="line"><span class="comment"># events but only for the master branch</span></span><br><span class="line"><span class="symbol">on:</span></span><br><span class="line">  <span class="symbol">push:</span></span><br><span class="line">    <span class="symbol">branches:</span> [ master ]</span><br><span class="line"></span><br><span class="line"><span class="comment"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span></span><br><span class="line"><span class="symbol">jobs:</span></span><br><span class="line">  <span class="comment"># This workflow contains a single job called "build"</span></span><br><span class="line">  build-<span class="keyword">and</span>-<span class="symbol">test:</span></span><br><span class="line">    <span class="comment"># The type of runner that the job will run on</span></span><br><span class="line">    runs-<span class="symbol">on:</span> macos-latest</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Steps represent a sequence of tasks that will be executed as part of the job</span></span><br><span class="line">    <span class="symbol">steps:</span></span><br><span class="line">    <span class="comment"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span></span><br><span class="line">    - <span class="symbol">uses:</span> actions/checkout@v2</span><br><span class="line"></span><br><span class="line">    - <span class="symbol">name:</span> Select Xcode</span><br><span class="line">      <span class="symbol">run:</span> sudo xcode-select -switch /Applications/Xcode_12.<span class="number">4</span>.app</span><br><span class="line">      </span><br><span class="line">    - <span class="symbol">name:</span> Xcode version</span><br><span class="line">      <span class="symbol">run:</span> /usr/bin/xcodebuild -version</span><br><span class="line">      </span><br><span class="line">    - <span class="symbol">name:</span> Build <span class="keyword">and</span> Test</span><br><span class="line">      <span class="symbol">run:</span> xcodebuild -workspace Example/CCRegionSelector.xcworkspace -scheme CCRegionSelector-Unit-Tests CODE_SIGN_IDENTITY=<span class="string">""</span> -configuration Debug CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination <span class="string">"platform=iOS Simulator,name=iPhone 12,OS=14.4"</span> ONLY_ACTIVE_ARCH=YES test</span><br></pre></td></tr></table></figure>
 
-<p><code>#define</code> 在 code 中是用取代的方式，compiler也沒辦法做 type 檢查，<code>stringInstance == strConstant</code> 的方式也比 #define 中用<code>isEqualToString</code> 快</p>
-<p>當要宣告 integer 時，apple 建議用</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="built_in">NSInteger</span> <span class="keyword">const</span> counter = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>同時為了 xcodebuild 比較好寫，可以把 CCRegionSelector-Unit-Tests 加到 Example 中的 Test 中，如圖下所示</p>
+<img src="/images/github-action.png" alt="github action" width="350"/>
 
-<p>但在loop中會有警告<code>Assignment of read-only variable ‘counter’</code>，需要用以下方式</p>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)showTimer &#123;</span><br><span class="line">counter += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>Ref:<br><a href="http://webbuilders.wordpress.com/2011/03/02/constant-in-objective-c/" target="_blank" rel="noopener">Constant in Objective-C</a></p>
+<p>傳上去後，每次有 code push 到 master 便會自動啟動測試了</p>
+<p>參考位置：<a href="https://github.com/ChadChang/CCRegionSelector" target="_blank" rel="noopener">https://github.com/ChadChang/CCRegionSelector</a></p>
 
       
     </div>
@@ -309,16 +307,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="../../../05/10/gcd/">
-                    GCD 筆記
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="../../../../2013/10/25/import-headershi-wu-fa-zhao-dao-cocoapods-shi-yong-de-framework-header/">
-                    import header時無法找到cocoapods 使用的framework header
+                <a href="../../20/CCRegionSelector-announce/">
+                    CCRegionSelector 發佈
                 </a>
             </div>
         
@@ -360,8 +352,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://chadchang.github.io/2014/03/30/constants/';
-            this.page.identifier = '2014/03/30/constants/';
+            this.page.url = 'http://chadchang.github.io/2021/02/27/github-action/';
+            this.page.identifier = '2021/02/27/github-action/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -383,21 +375,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="../../../05/10/gcd/" title="上一篇: GCD 筆記">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主頁"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="../../../../2013/10/25/import-headershi-wu-fa-zhao-dao-cocoapods-shi-yong-de-framework-header/" title="下一篇: import header時無法找到cocoapods 使用的framework header">
+            <a href="../../20/CCRegionSelector-announce/" title="下一篇: CCRegionSelector 發佈">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="../../../../2021/02/27/github-action/">使用 Github Action 為 CCRegionSelector 加上測試的 CI</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2021/02/20/CCRegionSelector-announce/">CCRegionSelector 發佈</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2021/02/19/deprecate-cocoapods-lib/">移除在 Cocoapods 上自己開發的 lib</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2021/02/08/unit-test-in-cocoapods-development-pod/">在 Cocoapods Development Pod 中加入 Test</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2020/11/26/child-insurance/">小孩住院保險那些事</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2018/06/26/genstring-for-objc-swift/">genstrings script 同時支援 objc&swift</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2018/05/25/apple-today/">上了 Apple Store Today !!</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/12/05/switch-to-atom/">用 Atom 寫 markdown</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/21/background-practices/">Common Background Practice</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/19/objcio-2-api/">Concurrent Programming 的 API</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/08/side-project/">做一個 Side Project</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/10/21/feature/">同一天 App Store、Google Play 雙 Feature</a></li><li class="post-list-item"><a class="post-list-link" href="../../../05/10/gcd/">GCD 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="">Constants</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2013/10/25/import-headershi-wu-fa-zhao-dao-cocoapods-shi-yong-de-framework-header/">import header時無法找到cocoapods 使用的framework header</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2012/02/24/sorry/">Heroku : Sorry , I cannot find /</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2012/02/24/xcode-4-dot-3fa-bu/">Xcode 4.3 發佈</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2011/12/18/review-clcok-v1-dot-0shang-jia-la/">Review Clock v1.0 上架啦!!! (已下架)</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">使用 Github Action 為 CCRegionSelector 加上測試的 CI</a></li><li class="post-list-item"><a class="post-list-link" href="../../20/CCRegionSelector-announce/">CCRegionSelector 發佈</a></li><li class="post-list-item"><a class="post-list-link" href="../../19/deprecate-cocoapods-lib/">移除在 Cocoapods 上自己開發的 lib</a></li><li class="post-list-item"><a class="post-list-link" href="../../08/unit-test-in-cocoapods-development-pod/">在 Cocoapods Development Pod 中加入 Test</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2020/11/26/child-insurance/">小孩住院保險那些事</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2018/06/26/genstring-for-objc-swift/">genstrings script 同時支援 objc&swift</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2018/05/25/apple-today/">上了 Apple Store Today !!</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/12/05/switch-to-atom/">用 Atom 寫 markdown</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/21/background-practices/">Common Background Practice</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/19/objcio-2-api/">Concurrent Programming 的 API</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/11/08/side-project/">做一個 Side Project</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2016/10/21/feature/">同一天 App Store、Google Play 雙 Feature</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2014/05/10/gcd/">GCD 筆記</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2014/03/30/constants/">Constants</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2013/10/25/import-headershi-wu-fa-zhao-dao-cocoapods-shi-yong-de-framework-header/">import header時無法找到cocoapods 使用的framework header</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2012/02/24/sorry/">Heroku : Sorry , I cannot find /</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2012/02/24/xcode-4-dot-3fa-bu/">Xcode 4.3 發佈</a></li><li class="post-list-item"><a class="post-list-link" href="../../../../2011/12/18/review-clcok-v1-dot-0shang-jia-la/">Review Clock v1.0 上架啦!!! (已下架)</a></li></ul>
 
 
 
