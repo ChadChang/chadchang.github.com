@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chadchang.github.io/"/>
-  <updated>2021-02-28T16:30:21.615Z</updated>
+  <updated>2022-04-06T09:07:38.356Z</updated>
   <id>http://chadchang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解決 mac 12.3 autojump 失效</title>
+    <link href="http://chadchang.github.io/2022/04/06/mac-12-3-autojump-%E5%A4%B1%E6%95%88/"/>
+    <id>http://chadchang.github.io/2022/04/06/mac-12-3-autojump-%E5%A4%B1%E6%95%88/</id>
+    <published>2022-04-06T09:05:47.000Z</published>
+    <updated>2022-04-06T09:07:38.356Z</updated>
+    
+    <content type="html"><![CDATA[<p>升級到 mac 12.3 後，因為這版預設將 python 2 移除了，年久失修的 autojump 也失效了。<br>還好找到好心人的解法</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:wting&#x2F;autojump.git</span><br><span class="line">cd autojump&#x2F;</span><br><span class="line">git checkout wting_default_python3</span><br><span class="line">.&#x2F;install.py</span><br></pre></td></tr></table></figure><p>ref: <a href="https://github.com/wting/autojump/issues/649?utm_source=pocket_mylist" target="_blank" rel="noopener">“env: python: No such file or directory” everytime a user changes directory in Monterey 12.3 · Issue #649 · wting/autojump · GitHub</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;升級到 mac 12.3 後，因為這版預設將 python 2 移除了，年久失修的 autojump 也失效了。&lt;br&gt;還好找到好心人的解法&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;p
+      
+    
+    </summary>
+    
+    
+    
+      <category term="mac" scheme="http://chadchang.github.io/tags/mac/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 Github Action 為 CCRegionSelector 加上測試的 CI</title>
