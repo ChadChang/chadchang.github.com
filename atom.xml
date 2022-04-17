@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chadchang.github.io/"/>
-  <updated>2022-04-06T09:07:38.356Z</updated>
+  <updated>2022-04-17T02:40:29.539Z</updated>
   <id>http://chadchang.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CCRegionSelector v1.1</title>
+    <link href="http://chadchang.github.io/2022/04/17/CCRegionSelector-v1-1/"/>
+    <id>http://chadchang.github.io/2022/04/17/CCRegionSelector-v1-1/</id>
+    <published>2022-04-17T02:36:38.000Z</published>
+    <updated>2022-04-17T02:40:29.539Z</updated>
+    
+    <content type="html"><![CDATA[<p>v1.1</p><ul><li>支援 Swift Package 安裝</li><li>把在 <a href="https://cocoapods.org/pods/CCRegionSelector" target="_blank" rel="noopener">https://cocoapods.org/pods/CCRegionSelector</a> 壞很久的縮圖修了</li></ul><p>下載位置：<a href="https://github.com/ChadChang/CCRegionSelector" target="_blank" rel="noopener">https://github.com/ChadChang/CCRegionSelector</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;v1.1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支援 Swift Package 安裝&lt;/li&gt;
+&lt;li&gt;把在 &lt;a href=&quot;https://cocoapods.org/pods/CCRegionSelector&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ht
+      
+    
+    </summary>
+    
+    
+    
+      <category term="iOS" scheme="http://chadchang.github.io/tags/iOS/"/>
+    
+      <category term="CocoaPods" scheme="http://chadchang.github.io/tags/CocoaPods/"/>
+    
+  </entry>
   
   <entry>
     <title>解決 mac 12.3 autojump 失效</title>
